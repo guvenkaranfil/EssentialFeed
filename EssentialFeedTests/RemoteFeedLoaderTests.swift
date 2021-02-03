@@ -45,13 +45,13 @@ class RemoteFeedLoaderTests: XCTestCase {
     }
     
     func test_init_requestDataFromURL() {
-        let url = URL(string: "https://a-url.com")!
+        let url = URL(string: "https://a-given")!
         let client = HTTPClientSpy()
         // subject under test
         let sut = RemoteFeedLoader(url: url, client: client)
         
         sut.load()
         
-        XCTAssertNotNil(client.requestedURL)
+        XCTAssertEqual(client.requestedURL, url)
     }
 }
