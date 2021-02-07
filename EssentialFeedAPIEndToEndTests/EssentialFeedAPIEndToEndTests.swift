@@ -8,7 +8,7 @@
 
 import XCTest
 import EssentialFeed
- 
+
 class EssentialFeedAPIEndToEndTests: XCTestCase {
     
     func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
@@ -38,7 +38,7 @@ class EssentialFeedAPIEndToEndTests: XCTestCase {
         trackFormemoryLeaks(client, file: file, line: line)
         trackFormemoryLeaks(loader, file: file, line: line)
         
-        let exp = expectation(description: "Wait for load completion")
+        let exp = expectation(description: "Wait for load completion to finish")
         
         var receivedResult: LoadFeedResult?
         loader.load { result in
